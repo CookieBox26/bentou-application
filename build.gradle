@@ -1,0 +1,27 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.github.resilience4j:resilience4j-spring-boot2:1.7.0'  // これ
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'  // これ
+    implementation 'org.springframework.boot:spring-boot-starter-aop'  // これ
+    implementation 'io.github.resilience4j:resilience4j-micrometer:1.7.0'  // これ
+    implementation 'io.micrometer:micrometer-registry-prometheus'  // これ
+}
+
+test {
+    useJUnitPlatform()
+}
