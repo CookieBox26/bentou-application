@@ -10,8 +10,4 @@ public class OnigiriServiceUme implements OnigiriService {
     public Onigiri provideOnigiri() {
         return new Onigiri("梅");
     }
-    @Override
-    public String get() {
-        return "UmeDayo";
-    }
 }
