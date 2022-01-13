@@ -1,7 +1,5 @@
 package com.example.bentou;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -34,13 +32,5 @@ public class KomeRepository {
     }
     private Kome fallbackKome(IllegalArgumentException e) {
         return null;
-    }
-
-    public static class Kome {
-        private String meigara;
-        public Kome() {}
-        public void setMeigara(String meigara) {
-            this.meigara = meigara;
-        }
     }
 }

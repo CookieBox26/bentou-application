@@ -38,7 +38,7 @@ class BentouControllerTest {
                 .andExpect(status().is(200))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
-        String expected = "{\"onigiri\":{\"guzai\":\"梅\"}}";  // 梅おにぎり
+        String expected = "{\"onigiri\":{\"kome\":{\"meigara\":\"あきたこまち\"},\"guzai\":\"梅\"}}";  // 梅おにぎり
         String actual = result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         JSONAssert.assertEquals(expected, actual, JSONCompareMode.STRICT);
     }

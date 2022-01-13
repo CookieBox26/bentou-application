@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 @Qualifier("tuna")
 public class OnigiriServiceTuna implements OnigiriService {
     private final KomeRepository komeRepository;
+    private final String guzai = "ツナ";
 
     public OnigiriServiceTuna(
             KomeRepository komeRepository
@@ -15,7 +16,7 @@ public class OnigiriServiceTuna implements OnigiriService {
 
     @Override
     public Onigiri provideOnigiri() {
-        KomeRepository.Kome kome = this.komeRepository.getKome();
-        return new Onigiri("ツナ");
+        Kome kome = this.komeRepository.getKome();
+        return new Onigiri(kome, guzai);
     }
 }

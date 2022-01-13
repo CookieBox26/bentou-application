@@ -6,8 +6,11 @@ import org.springframework.stereotype.Service;
 @Service
 @Qualifier("ume")
 public class OnigiriServiceUme implements OnigiriService {
+    private final String guzai = "梅";
+
     @Override
     public Onigiri provideOnigiri() {
-        return new Onigiri("梅");
+        Kome kome = new Kome("あきたこまち");
+        return new Onigiri(kome, guzai);
     }
 }
